@@ -63,3 +63,4 @@ Troubleshooting:
 - If you see missing module/type errors, run `npm install` from the project root.
 - Use `npm run dev` (Vite) for the fastest edit/refresh cycle — it provides HMR and TypeScript checks.
 # HireTrust-solana
+# HireTrust-solana
