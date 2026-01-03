@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+// Fix: analyzeResume is now correctly exported from the service
 import { analyzeResume } from '../services/geminiService';
 import { generateResumeHash, storeVerificationOnChain, generateMockSignature } from '../services/solanaService';
 import { ResumeAnalysis, VerificationRecord, AppRoute } from '../types';
@@ -198,7 +199,8 @@ const CandidateFlow: React.FC<CandidateFlowProps> = ({ walletConnected, onConnec
                     <i className="fas fa-copy"></i> Copy Hash
                   </button>
                   <button 
-                    onClick={() => onNavigate(AppRoute.RECRUITER, result.hash)}
+                    // Fix: Property 'RECRUITER' does not exist on type 'typeof AppRoute'. Using RECRUITER_DASHBOARD instead.
+                    onClick={() => onNavigate(AppRoute.RECRUITER_DASHBOARD, result.hash)}
                     className="flex-1 py-3 bg-[#14F195] text-black rounded-xl font-bold transition-all text-sm flex items-center justify-center gap-2"
                   >
                     Verify Live <i className="fas fa-arrow-right"></i>

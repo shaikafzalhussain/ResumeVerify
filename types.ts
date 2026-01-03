@@ -1,4 +1,37 @@
 
+export enum UserRole {
+  CANDIDATE = 'CANDIDATE',
+  RECRUITER = 'RECRUITER'
+}
+
+export interface User {
+  email: string;
+  role: UserRole;
+  password?: string;
+}
+
+export interface Job {
+  id: string;
+  title: string;
+  role: 'Cloud' | 'DevOps' | 'Support';
+  skills: string[];
+  description: string;
+  postedBy: string;
+  createdAt: number;
+  status: 'active' | 'closed'; // Added status for job lifecycle
+}
+
+export interface Application {
+  id: string;
+  jobId: string;
+  candidateEmail: string;
+  resumeHash: string;
+  aiScore: number;
+  status: 'Pending' | 'Verified';
+  timestamp: number;
+  analysis: ResumeAnalysis;
+}
+
 export interface ResumeAnalysis {
   score: number;
   strengths: string[];
@@ -17,7 +50,10 @@ export interface VerificationRecord {
 }
 
 export enum AppRoute {
-  CANDIDATE = 'candidate',
-  RECRUITER = 'recruiter',
-  HOME = 'home'
+  LANDING = 'landing',
+  LOGIN = 'login',
+  CANDIDATE_DASHBOARD = 'candidate_dashboard',
+  RECRUITER_DASHBOARD = 'recruiter_dashboard',
+  APPLY = 'apply',
+  POST_JOB = 'post_job'
 }

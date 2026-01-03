@@ -1,6 +1,6 @@
 {
-  "name": "AI Resume Verifier - Solana MVP",
-  "description": "A decentralized resume verification platform using Gemini AI for scoring and Solana for immutable proof of authenticity.",
+  "name": "HireTrust - Verifiable Career Identities",
+  "description": "Production-ready decentralized hiring platform using Gemini AI and Solana for immutable proof of merit.",
   "requestFramePermissions": [
     "camera"
   ]

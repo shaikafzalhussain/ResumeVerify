@@ -4,24 +4,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Resume Verifier</title>
+  <title>HireTrust | Decentralized Verifiable Credentials</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0e14;
-      color: #e2e8f0;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #05070a;
+      color: #f1f5f9;
+      overflow-x: hidden;
     }
     .solana-gradient {
       background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
     }
+    .solana-text-gradient {
+      background: linear-gradient(135deg, #9945FF 0%, #14F195 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .glass-card {
       background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .glass-card:hover {
+      border-color: rgba(20, 241, 149, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+    .animate-slide-right { animation: slideRight 0.6s ease-out forwards; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    
+    .blob {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(153, 69, 255, 0.15) 0%, rgba(20, 241, 149, 0) 70%);
+      filter: blur(80px);
+      z-index: -1;
+      animation: pulse-slow 8s infinite ease-in-out;
+    }
+    
+    /* Scroll margin for section links */
+    section { scroll-margin-top: 100px; }
   </style>
 <script type="importmap">
 {
